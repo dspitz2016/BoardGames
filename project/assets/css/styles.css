@@ -1,28 +1,64 @@
 body {
-	background-color: #d6dbd2;
+	background-color: #eaefe6;
+	font-family: 'Jura', sans-serif;
 }
-#nav-bar ul {
-	list-style-type: none;
-	overflow: hidden;
-	background-color: #0c7a18;
-	margin: 0;
-	padding: 0;
-	position: fixed;
+#header {
 	width: 100%;
+	position: fixed;
 	top: 0;
 	left: 0;
+	background-color: #0c7a18;
 }
-#nav-bar li a {
-	display: block;
-	text-align: center;
-	text-decoration: none;
-	padding: 25px 20px;
+ul {
+    list-style-type: none;
+	overflow: hidden;
+	margin: auto;
+	padding: 0;
+	background-color: #0c7a18;
+	width: 80%;
+}
+h1 {
+	background-image: url("../images/leaf1.png");
+	background-repeat: no-repeat;
 	color: white;
-	font-family: 'Jura', sans-serif;
-	float: left;
+
 }
-#nav-bar li a:hover {
-	background-color: #4ca552;
+li, h1 {
+    float: left;
+	margin: 0;
+	margin-left: 30px;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #53a359;
+}
+li.dropdown {
+    display: inline-block;
+}
+.drop-list {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.drop-list a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.drop-list a:hover {background-color: #f1f1f1}
+.dropdown:hover .drop-list {
+    display: block;
 }
 #title {
 	color: white;
@@ -41,26 +77,56 @@ body {
     background-repeat: no-repeat;
 }
 #main-body {
-	margin: 0 auto;
+	display: block;
+	margin: auto;
 	margin-top: 70px;
-	width: 90%;
+	width: 80%;
 }
 #top-left-box {
 	float: left;
-	width: 65%;
+	width: 100%;
 	height: 400px;
 	background-color: white;
 	border-radius: 6px;
 }
-#top-right-box {
-	margin-left: 5%;
+/*#top-right-box {
 	float: right;
-	width: 30%;
+	width: 15em;
 	height: 400px;
 	border-radius: 6px;
+}*/
+/* */
+#bottom-body {
+	width: 100%;
+	display: block;
+	margin: auto;
+	border-radius: 6px;
+}
+.card {
+	display: inline-block;
+	margin-top: 2em;
+	width: 49.7%;
+	height: 350px;
+	border-radius: 6px;
+	background-color: white;
+}
+.card img {
+	display: block;
+	margin: auto;
+	width: 70%;
+	height: auto;
+}
+.card h3, .card p {
+	margin: 1em 0 0.5em 1em;
+}
+.card button {
+	text-transform: uppercase;
+	border: none;
+	padding: 8px;
+	margin: 0 0 0 1em;
 }
 /* TABLE STYLING */
-table {
+/*table {
 	width: 100%;
 	height: 100%;
 }
@@ -73,11 +139,8 @@ td {
 	padding-left: 10px;
 	background-color: white;
 }
-/* SLIDESHOW BUTTONS */
-/* Next & previous buttons */
-.left-slideshow-button, .right-slideshow-button {
+#left-slideshow-button, #right-slideshow-button {
   cursor: pointer;
-  position: absolute;
   top: 50%;
   padding: 8px;
   color: white;
@@ -85,16 +148,34 @@ td {
   transition: 0.6s ease;
   border: none;
 }
-
-/* Position the "next button" to the right */
-.right-slideshow-button {
-  right: 0;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.left-slideshow-button:hover, .right-slideshow-button:hover {
+#left-slideshow-button:hover, #right-slideshow-button:hover {
   background-color: rgba(0,0,0,0.8);
+}*/
+#game-image-box {
+	height: 300px;
+	background-color: white;
+	border-radius: 6px;
 }
-.slide {
-	display: none;
+#game-info-box {
+	height: 300px;
+	margin-top: 2em;
+	border-radius: 6px;
+	background-color: white;
+}
+#input-box {
+	width: 100%;
+}
+
+@media only screen and (max-width: 875px) {
+	#main-body {
+		width: 90%;
+	}
+	.card {
+		width: 49.6%;
+	}
+	@media only screen and (max-width: 600px) {
+		.card {
+			width: 100%;
+		}
+	}
 }
