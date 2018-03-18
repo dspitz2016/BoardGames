@@ -9,14 +9,20 @@
 	</head>
 	<body>
 		<div id="header">
-			<div id="title">
-				<p>MEAN</p>
-			</div>
 			<div id="nav-bar">
 				<ul>
+					<h1>MEAN</h1>
 					<li><a href="#">Home</a></li>
 					<li><a href="#">About</a></li>
-					<li><a href="#">Categories</a></li>
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropbtn">Categories</a>
+						<div class="drop-list">
+							<a href="#">New</a>
+							<a href="#">Popular</a>
+							<a href="#">Top Rated</a>
+							<a href="#">More...</a>
+						</div>
+					</li>
 					<li><a href="#">References</a></li>
 				</ul>
 			</div>
@@ -26,34 +32,9 @@
 				<input type="text" name="search" placeholder="Search..."/>
 			</div>
 			<div id="top-left-box">
-				<div class="slide">
-					<img />
-					<div class="image-text">
-						Ex text1
-					</div>
-				</div>
-				<div class="slide">
-					<img />
-					<div class="image-text">
-						Ex text2
-					</div>
-				</div>
-				<div class="slide">
-					<img />
-					<div class="image-text">
-						Ex text3
-					</div>
-				</div>
-				<div class="slide">
-					<img />
-					<div class="image-text">
-						Ex text4
-					</div>
-				</div>
-				<button class="left-slideshow-button" onclick="plusDivs(-1)">&#10094;</button>
-<button class="right-slideshow-button" onclick="plusDivs(1)">&#10095;</button>
+				
 			</div>
-			<div id="top-right-box">
+			<!--<div id="top-right-box">
 				<table>
 					<tr>
 						<th>Categories</th>
@@ -74,6 +55,33 @@
 						<td>Example</td>
 					</tr>
 				</table>
+			</div>-->
+			<div id="bottom-body">
+				<!-- REMOVE AFTER TESTING -->
+				<div class="card">
+					<img src="assets/images/sample.jpg"></img>
+					<h3>Title</h3>
+					<p>Desc</p>
+					<button class="read-more">Read more</button>
+				</div>
+				<div class="card">
+					<img src="assets/images/sample.jpg"></img>
+					<h3>Title</h3>
+					<p>Desc</p>
+					<button class="read-more">Read more</button>
+				</div>
+				<div class="card">
+					<img src="assets/images/sample.jpg"></img>
+					<h3>Title</h3>
+					<p>Desc</p>
+					<button class="read-more">Read more</button>
+				</div>
+				<div class="card">
+					<img src="assets/images/sample.jpg"></img>
+					<h3>Title</h3>
+					<p>Desc</p>
+					<button class="read-more">Read more</button>
+				</div>
 			</div>
 		</div>
 	</body>
