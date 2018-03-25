@@ -1,13 +1,12 @@
 var Comment = require('../models/comment.model');
 _this = this;
-
 // to create new comments based on inputed data
 exports.createComment = async function(c) {
   // new object to insert in database
   var newComment = new Comment(
-    id:c.id,
-    name:c.name,
-    comment:c.comment
+    id:_this.c.id,
+    name:_this.c.name,
+    comment:_this.c.comment
   )};
 // try to insert into database, error if can't
   try {
