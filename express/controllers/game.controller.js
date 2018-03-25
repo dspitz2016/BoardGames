@@ -11,26 +11,17 @@ exports.getGameById = async function(req, res, next) {
             message: "Successfully recieved Game"
         });
     } catch (e) {
-        return res.status(400).json({
-            status: 400,
-            message = e.message
-        });
+        return e;
     }
 }
 
 exports.getGames = async function(req, res, next) {
     try {
         var games = await GameService.getGames();
-        return res.status(200).json({
-            status: 200,
-            data: games,
-            message: "Successfully received Games"
-        });
+        console.log(games);
+        res.render('games', {title: 'Game List', game_list: games});
     } catch (e) {
-        return res.status(400).json({
-            status: 400,
-            message = e.message
-        });
+        return e;
     }
 }
 
@@ -45,9 +36,6 @@ exports.searchGames = async function(req, res, next) {
             message: "Successfully searched Games"
         });
     } catch (e) {
-        return res.status(400).json({
-            status: 400,
-            message = e.message
-        });
+        return e;
     }
 }

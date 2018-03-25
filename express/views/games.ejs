@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <ul>
+        <% game_list.forEach(function(game) { %>
+            <li><%= game.names %> - <%= game.category %></li>
+        <% }); %>
+    </ul>  
+  </body>
+</html>

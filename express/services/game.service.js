@@ -15,6 +15,7 @@ exports.getGameById = async function(game_id) {
 exports.getGames = async function() {
     try {
         var games = await Game.find({});
+        console.log(games);
         return games;
     } catch (e) {
         console.log(e);
@@ -36,7 +37,8 @@ exports.searchGames = async function(query) {
                         $regex: ",*" + query + ".*"
                     }
                 }
-            ]
+            ],
+            
         });
         return games;
     } catch (e) {
