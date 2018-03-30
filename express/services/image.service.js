@@ -20,9 +20,8 @@ exports.saveImage = async function (gridfsModel, imageStream, game_id) {
             filename: game_id + '.jpg',
             contentType: 'image/jpeg',
         }, imageStream, function (error, createdFile) {
-            console.log('Error saving image.');
+            console.log('Saved image: ' + game_id + '.jpg');
         });
-        console.log('Saved image: ' + game_id + '.jpg');
     } catch (e) {
         console.log(e);
         throw Error('Error saving image');
