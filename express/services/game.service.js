@@ -12,9 +12,9 @@ exports.getGameById = async function(game_id) {
     }
 }
 
-exports.getGames = async function() {
+exports.getGames = async function(limit = 5000) {
     try {
-        var games = await Game.find({game_id: { $exists: true }});
+        var games = await Game.find({game_id: { $exists: true }}).limit(limit);
         return games;
     } catch (e) {
         console.log(e);

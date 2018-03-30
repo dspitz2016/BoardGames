@@ -15,6 +15,16 @@ exports.getGameById = async function(req, res, next) {
     }
 }
 
+exports.getGamesHomePage = async function(req, res, next) {
+    try {
+        var games = await GameService.getGames(4);
+        console.log(games);
+        res.render('games', {title: 'Game List', game_list: games});
+    } catch (e) {
+        return e;
+    }
+}
+
 exports.getGames = async function(req, res, next) {
     try {
         var games = await GameService.getGames();
