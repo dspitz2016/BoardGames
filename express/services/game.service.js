@@ -14,8 +14,7 @@ exports.getGameById = async function(game_id) {
 
 exports.getGames = async function() {
     try {
-        var games = await Game.find({});
-        console.log(games);
+        var games = await Game.find({game_id: { $exists: true }});
         return games;
     } catch (e) {
         console.log(e);
