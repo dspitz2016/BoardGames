@@ -24,30 +24,14 @@
 
 			<div id="bottom-body">
 				<!-- REMOVE AFTER TESTING -->
-				<div class="card">
-					<img src="assets/images/sample.jpg"></img>
-					<h3>Title</h3>
-					<p>Desc</p>
-					<button class="read-more">Read more</button>
-				</div>
-				<div class="card">
-					<img src="assets/images/sample.jpg"></img>
-					<h3>Title</h3>
-					<p>Desc</p>
-					<button class="read-more">Read more</button>
-				</div>
-				<div class="card">
-					<img src="assets/images/sample.jpg"></img>
-					<h3>Title</h3>
-					<p>Desc</p>
-					<button class="read-more">Read more</button>
-				</div>
-				<div class="card">
-					<img src="assets/images/sample.jpg"></img>
-					<h3>Title</h3>
-					<p>Desc</p>
-					<button class="read-more">Read more</button>
-				</div>
+				<% game_list.forEach(function(game) { %>
+					<div class="card">
+						<!--<img src="assets/images/sample.jpg"></img>-->
+						<h3><%= game.names %></h3>
+						<p><%= game.mechanic %></p>
+						<button class="read-more">Read more</button>
+					</div>
+				<% }); %>
 			</div>
 		</div>
 	</body>

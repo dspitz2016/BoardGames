@@ -2,11 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 var GameController = require('../controllers/game.controller');
+var ImageController = require('../controllers/Image.controller');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', GameController.getGamesHomePage);
 router.get('/games', GameController.getGames);
-router.get('/image/:game_id', ImageController.getImage);
+router.get('/image/:filename', ImageController.getImage);
 module.exports = router;

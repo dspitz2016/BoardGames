@@ -1,7 +1,7 @@
-exports.getImageByGameId = async function (game_id) {
+exports.getImageByFileName = async function (name) {
     try {
         var image = new ImageModel({
-            filename: game_id + '.jpg'
+            filename: name
         });
         image.read(function(error, content){
             var img = new Buffer(content).toString(base64);

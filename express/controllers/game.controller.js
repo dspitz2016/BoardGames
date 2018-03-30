@@ -19,7 +19,7 @@ exports.getGamesHomePage = async function(req, res, next) {
     try {
         var games = await GameService.getGames(4);
         console.log(games);
-        res.render('games', {title: 'Game List', game_list: games});
+        res.render('index', {title: 'Game List', game_list: games});
     } catch (e) {
         return e;
     }
