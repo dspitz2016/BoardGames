@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>ISTE 438 MongoDB Project</title>
-		<!--<link rel="stylesheet" href="express/views/assets/css/styles.css">-->
+		<link rel='stylesheet' href='/stylesheets/style.css' />
 		<link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
 		<!--<link rel="icon" href="assets/images/leaf1.png" type="image/png">-->
 		<style>
@@ -11,9 +11,7 @@
 		</style>
 	</head>
 	<body>
-		<div id="header">
-			<% include ./partials/nav %>
-		</div>
+		<% include ./partials/nav %>
 		<div id="main-body">
 			<div id="search-bar">
 				<input type="text" name="search" placeholder="Search..."/>
@@ -21,7 +19,6 @@
 			<div id="top-left-box">
 				
 			</div>
-
 			<div id="bottom-body">
 				<!-- REMOVE AFTER TESTING -->
 				<% game_list.forEach(function(game) { %>
