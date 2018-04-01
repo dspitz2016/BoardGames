@@ -25,12 +25,10 @@ h1 {
 li, h1 {
     float: left;
 	margin: 0;
-	margin-left: 30px;
 }
 
 h2 {
 	margin: 0;
-	margin-left: 30px;
 	clear: both;
 }
 
@@ -164,7 +162,8 @@ td {
 
 #game-header-box {
 	float: left;
-	width: 50%;	
+	width: 50%;
+    margin-left: 30px;	
 }
 
 #game-image-box img {
@@ -179,6 +178,9 @@ td {
 }
 #input-box {
 	width: 100%;
+}
+#add-comment {
+    margin-top: 1em;
 }
 
 fieldset p {
