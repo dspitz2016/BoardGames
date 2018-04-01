@@ -4,18 +4,17 @@
 	<body>
 		<% include ./partials/nav %>
 		<div id="main-body">
-			<div id="search-bar">
-				<input type="text" name="search" placeholder="Search..."/>
-			</div>
-			<div id="top-left-box">
-				
+				<% include ./partials/searchbar %>
+			<div id="top-left-box" style="text-align:center;">
+				<h1 style="background:none;float:none;color:black;">Board Game Database</h1>
+				<h2>Featured Games</h2>
 			</div>
 				<% game_list.forEach(function(game) { %>
 					<div class="card">
 						<img src="<%= game.image_url %>	"></img>
 						<h3><%= game.names %></h3>
 						<p><%= game.mechanic %></p>
-						<button class="read-more">Read more</button>
+						<a href="/game/<%= game.game_id %>"><button class="read-more">Read more</button></a>
 					</div>
 				<% }); %>
 		</div>

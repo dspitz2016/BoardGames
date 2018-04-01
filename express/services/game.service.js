@@ -28,23 +28,30 @@ exports.getGames = async function(limit = 5000, page = 1) {
     }
 }
 
-exports.searchGames = async function(query) {
+exports.searchGames = async function(query, limit, page) {
     try {
-        var games = await Game.find({
-            $or: [
+        var options = {
+            page,
+            limit
+        };
+        var searchQuery = {
+            "$or": [
                 {
-                    name: {
-                        $regex: ".*" + query + ".*"
+                    names: {
+                        "$regex": query,
+                        "$options": "i"
                     }
                 },
                 {
                     category: {
-                        $regex: ",*" + query + ".*"
+                        "$regex": query,
+                        "$options": "i"
                     }
                 }
-            ],
-            
-        });
+            ]
+        };
+        var games = await Game.paginate(searchQuery, options);
+        console.log(games);
         return games;
     } catch (e) {
         console.log(e);

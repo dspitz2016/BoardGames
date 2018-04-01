@@ -4,24 +4,25 @@
   <body>
     <% include ./partials/nav %>
     <div id="main-body">
+        <% include ./partials/searchbar %>
           <% game_list.forEach(function(game) { %>
             <div class="card">
                 <img src="<%= game.image_url %>	"></img>
                 <h3><%= game.names %></h3>
                 <p><%= game.mechanic %></p>
-                <button>Read more</button>
+                <a href="/game/<%= game.game_id %>"><button class="read-more">Read more</button></a>
               </div>
           <% }); %>
           <br />                   
       <div class="pagination">
         <% if (page > 1) { %>
-          <a href="/games/<%= parseInt(page)-1 %>">
+          <a href="/games/<%= parseInt(page)-1 %>" style="text-decoration:none;">
             <button class="read-more">Previous Page</button>
           </a>
         <% } %>
-            <%= page %>
+          <p style="display:inline; margin-left:10px;"><%= page %></p>
           <% if (page < pages) { %>
-            <a href="/games/<%= parseInt(page)+1 %>">
+            <a href="/games/<%= parseInt(page)+1 %>" style="text-decoration:none;">
               <button>Next Page</button>
             </a>
         <% } %>

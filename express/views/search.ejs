@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>ISTE 438 MongoDB Project</title>
-		<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-		<link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-		<link rel="icon" href="assets/images/leaf1.png" type="image/png">
-		<style>
-			
-		</style>
-	</head>
-	<body>
-		<% include ./partials/nav %>
-		<div id="main-body">
-			<div id="search-bar">
-				<input type="text" name="search" placeholder="Search..."/>
-			</div>
-
-			<div id="bottom-body">
-				<% game_list.forEach(function(game) { %>
-					<div class="card">
-						<!--<img src="assets/images/sample.jpg"></img>-->
-						<h3><%= game.names %></h3>
-						<p><%= game.mechanic %></p>
-						<button class="read-more">Read more</button>
-					</div>
-				<% }); %>
-			</div>
-		</div>
-	</body>
+    <% include ./partials/head %>
+  <body>
+    <% include ./partials/nav %>
+    <div id="main-body">
+		<h1 style="color:#0c7a18;">Search for: '<%= search %>'</h1>
+		<% include ./partials/searchbar %>
+          <% game_list.forEach(function(game) { %>
+            <div class="card">
+                <img src="<%= game.image_url %>	"></img>
+                <h3><%= game.names %></h3>
+                <p><%= game.mechanic %></p>
+                <a href="/game/<%= game.game_id %>"><button class="read-more">Read more</button></a>
+              </div>
+          <% }); %>
+          <br />                   
+      <div class="pagination">
+        <% if (page > 1) { %>
+          <a href="/search/<%= search %>/<%= parseInt(page)-1 %>" style="text-decoration:none;">
+            <button class="read-more">Previous Page</button>
+          </a>
+        <% } %>
+          <p style="display:inline; margin-left:10px;"><%= page %></p>
+          <% if (page < pages) { %>
+            <a href="/search/<%= search %>/<%= parseInt(page)+1 %>" style="text-decoration:none;">
+              <button>Next Page</button>
+            </a>
+        <% } %>
+      </div> 
+    </div> 
+  </body>
 </html>

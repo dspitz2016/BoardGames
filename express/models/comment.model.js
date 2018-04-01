@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 * or use the String ObjectId value?
 */
 var CommentSchema = new mongoose.Schema({
-  game_id: int,
+  game_id: Number,
   name: String,
   comment: String
 });

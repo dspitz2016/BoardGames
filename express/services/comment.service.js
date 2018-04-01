@@ -4,9 +4,9 @@ _this = this;
 exports.createComment = async function(c) {
   // new object to insert in database
   var newComment = new Comment({
-    id: _this.c.id,
-    name: _this.c.name,
-    comment: _this.c.comment
+    game_id: c.game_id,
+    name: c.name,
+    comment: c.comment
   });
 // try to insert into database, error if can't
   try {
@@ -19,9 +19,10 @@ exports.createComment = async function(c) {
 }
 
 // to get comments from database based on game ID number
-exports.getComments = async function(game) {
+exports.getComments = async function(game_id) {
    try {
-      var com = await Comment.find({game_id: game.game_id}); 
+      var com = await Comment.find({game_id: game_id}); 
+      return com;
    }
   catch(err) {
     throw Error('Error finding comments with this ID'); 
