@@ -25,7 +25,7 @@ var populateImages = async function () {
     games.forEach((game) => {
         if (game.game_id != undefined) {
             try {
-                const resizeToJpg = sharp().resize(null, 800).toFormat('jpeg');
+                const resizeToJpg = sharp().resize(null, 600).toFormat('jpeg');
                 request.get(game.image_url)
                 .on('error', function(e) {
                     console.log("Request Error");

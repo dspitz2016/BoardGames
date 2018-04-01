@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+    <% include ./partials/head %>
   <body>
-    <ul>
-        <% game_list.forEach(function(game) { %>
-            <li><%= game.names %> - <%= game.category %></li>
-        <% }); %>
-    </ul>  
+    <% include ./partials/nav %>
+    <div id="main-body">
+          <% game_list.forEach(function(game) { %>
+            <div class="card">
+                <img src="<%= game.image_url %>	"></img>
+                <h3><%= game.names %></h3>
+                <p><%= game.mechanic %></p>
+                <button>Read more</button>
+              </div>
+          <% }); %>
+          <br />                   
+      <div class="pagination">
+        <% if (page > 1) { %>
+          <a href="/games/<%= parseInt(page)-1 %>">
+            <button class="read-more">Previous Page</button>
+          </a>
+        <% } %>
+            <%= page %>
+          <% if (page < pages) { %>
+            <a href="/games/<%= parseInt(page)+1 %>">
+              <button>Next Page</button>
+            </a>
+        <% } %>
+      </div> 
+    </div> 
   </body>
 </html>

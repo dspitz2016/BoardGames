@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+        <% include ./partials/head %>
+	<body>
+		<% include ./partials/nav %>
+		<div id="main-body">
+			<div id="search-bar">
+				<input type="text" name="search" placeholder="Search..."/>
+			</div>
+			<div id="game-image-box">
+                    <img style="float: left;" src="<%= game.image_url %>	"></img>
+                    <div id="game-header-box">
+                        <h1 style="color:#0c7a18"><%= game.names %></h1>
+                        <h2>Rank: <%= game.rank %></h2>
+                        <h2>Average Rating: <%= game.avg_rating %>/10</h2>
+                        <h2>Category: <%= game.category %></h2>
+                        <h2>Players: <%= game.min_players + '-' + game.max_players %></h2>
+                        <h2>Average Time: <%= game.avg_time %> minutes</h2>
+                        <h2><a href="<%= game.bgg_url %>">Board Game Geek Link</a></h2>
+                    </div>
+			</div>
+			<fieldset id="game-info-box">
+                <legend>Details</legend>
+                <p>Players: <%= game.min_players + '-' + game.max_players %></p>
+                <p>Minimum Age: <%= game.age %> years</p>
+                <p>Time Range: <%= game.min_time + '-' + game.max_time %> minutes</p>
+                <p>Average Time: <%= game.avg_time %> minutes</p>
+                <p>Year: <%= game.year %></p>
+                <p>Designer: <%= game.designer %></p>
+                <p>Category: <%= game.category %></p>
+                <p>Mechanics: <%= game.mechanic %></p>
+
+			</fieldset>
+			<form action="" id="add-comment">
+				<h2>Leave a comment</h2>
+				<p>Name: <input type="text" maxlength="30" required></p>
+				<p>Comment: <textarea maxlength="500" rows="4" id="input-box" required></textarea></p>
+				<input type="submit" value="Submit">
+			</form>
+			<div id="comment-section">
+				<h2>Comments</h2>
+				<div class="comment">
+					<h3>Name</h3>
+					<p>Sample comment</p>
+				</div>
+				<div class="comment">
+					<h3>Name</h3>
+					<p>Sample comment two</p>
+				</div>
+				<div class="comment">
+					<h3>Name</h3>
+					<p>Another sample comment</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

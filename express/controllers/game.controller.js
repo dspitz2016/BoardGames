@@ -5,11 +5,8 @@ exports.getGameById = async function(req, res, next) {
 
     try {
         var game = await GameService.getGameById(game_id);
-        return res.status(200).json({
-            status: 200,
-            data: game,
-            message: "Successfully recieved Game"
-        });
+        console.log(game);
+        res.render('game', {title: game.names, game: game});
     } catch (e) {
         return e;
     }
@@ -19,17 +16,22 @@ exports.getGamesHomePage = async function(req, res, next) {
     try {
         var games = await GameService.getGames(4);
         console.log(games);
-        res.render('index', {title: 'Game List', game_list: games});
+        res.render('index', {title: 'Game List', game_list: games.docs});
     } catch (e) {
         return e;
     }
 }
 
 exports.getGames = async function(req, res, next) {
+    var page = req.params.page;
+    console.log(page);
+    if(!page) {
+        page = 1;
+    }
     try {
-        var games = await GameService.getGames();
+        var games = await GameService.getGames(10, page);
         console.log(games);
-        res.render('games', {title: 'Game List', game_list: games});
+        res.render('games', {title: 'Game List', game_list: games.docs, page: games.page, pages: games.pages});
     } catch (e) {
         return e;
     }

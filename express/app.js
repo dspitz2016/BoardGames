@@ -16,7 +16,16 @@ var mongoDB = 'mongodb://127.0.0.1:27017/GameData';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
+var gridfs;
 db.on('error', console.error.bind(console, 'MongoDB connection error'));
+db.once('open', function () {
+  gridfs = require('mongoose-gridfs')({
+      model: 'Image',
+      mongooseConnection: db
+  });
+});
+
+
 
 
 // view engine setup

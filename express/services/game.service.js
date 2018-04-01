@@ -2,9 +2,10 @@ var Game = require('../models/game.model');
 
 exports.getGameById = async function(game_id) {
     try {
-        var game = Game.findOne({
-            game_id: this.game_id
+        var game = await Game.findOne({
+            game_id: game_id
         });
+        console.log(game);
         return game;
     } catch (e) {
         console.log(e);
@@ -12,9 +13,14 @@ exports.getGameById = async function(game_id) {
     }
 }
 
-exports.getGames = async function(limit = 5000) {
+exports.getGames = async function(limit = 5000, page = 1) {
     try {
-        var games = await Game.find({game_id: { $exists: true }}).limit(limit);
+        var options = {
+            page,
+            limit
+        };
+        var query = {};
+        var games = await Game.paginate(query, options);
         return games;
     } catch (e) {
         console.log(e);

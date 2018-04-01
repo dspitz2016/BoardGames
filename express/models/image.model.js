@@ -3,4 +3,5 @@ var gridfs = require('mongoose-gridfs');
 
 var ImageSchema = gridfs.schema;
 
-module.export = mongoose.model('Image', ImageSchema);
+const Image = mongoose.model('Image', ImageSchema, 'fs.files');
+module.exports = Image;
