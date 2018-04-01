@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>ISTE 438 MongoDB Project</title>
-		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 		<link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-		<link rel="icon" href="/images/leaf.png" type="image/png">
+		<link rel="icon" href="assets/images/leaf1.png" type="image/png">
 		<style>
 			
 		</style>
@@ -16,9 +16,8 @@
 			<div id="search-bar">
 				<input type="text" name="search" placeholder="Search..."/>
 			</div>
-			<div id="top-left-box">
-				
-			</div>
+
+			<div id="bottom-body">
 				<% game_list.forEach(function(game) { %>
 					<div class="card">
 						<!--<img src="assets/images/sample.jpg"></img>-->
@@ -27,6 +26,7 @@
 						<button class="read-more">Read more</button>
 					</div>
 				<% }); %>
+			</div>
 		</div>
 	</body>
 </html>

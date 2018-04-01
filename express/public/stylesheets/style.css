@@ -18,7 +18,7 @@ ul {
 	width: 80%;
 }
 h1 {
-	background-image: url("../images/leaf1.png");
+    background-image: url('/images/leaf.png');
 	background-repeat: no-repeat;
 	color: white;
 
@@ -28,37 +28,15 @@ li, h1 {
 	margin: 0;
 	margin-left: 30px;
 }
-li a, .dropbtn {
+li a {
     display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover, .dropdown:hover .dropbtn {
+li a:hover {
     background-color: #53a359;
-}
-li.dropdown {
-    display: inline-block;
-}
-.drop-list {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.drop-list a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-.drop-list a:hover {background-color: #f1f1f1}
-.dropdown:hover .drop-list {
-    display: block;
 }
 #title {
 	color: white;
@@ -72,7 +50,7 @@ li.dropdown {
 	border-radius: 6px;
 	border: 0px solid;
     background-color: white;
-    background-image: url('../images/search1.png');
+    background-image: url('/images/search.png');
     background-position: 5px 3px; 
     background-repeat: no-repeat;
 }
@@ -89,13 +67,6 @@ li.dropdown {
 	background-color: white;
 	border-radius: 6px;
 }
-/*#top-right-box {
-	float: right;
-	width: 15em;
-	height: 400px;
-	border-radius: 6px;
-}*/
-/* */
 #bottom-body {
 	width: 100%;
 	display: block;
