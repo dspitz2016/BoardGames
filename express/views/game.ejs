@@ -65,7 +65,7 @@
                         <p>Comment:
                             <textarea maxlength="500" rows="4" id="input-box" name="comment" required></textarea>
                         </p>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit">    
                     </form>
                 </div>
                 <div id="comment-section">
@@ -74,7 +74,7 @@
                     <% comments.forEach(function(comment) { %>
                     <div class="comment">
                         <h3><%= comment.name %></h3>
-                        <p><%= comment.comment %>t</p>
+                        <p><%= comment.comment %></p>
                     </div>
                     <% }); %>
                 </div>
